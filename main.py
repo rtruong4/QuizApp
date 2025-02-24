@@ -10,7 +10,7 @@ db = client["quizAppDB"]
 user_collection = db["users"]
 quiz_collection = db["quizzes"]
 
-#make sure there are no duplicate quiz names
+#make sure there are no duplicate quiz names and usernames since we use those as identifiers
 user_collection.create_index([("username", 1)], unique=True)
 quiz_collection.create_index([("quizName", 1)], unique=True)
 
