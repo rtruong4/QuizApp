@@ -301,3 +301,28 @@ def test_delete_quiz(client):
     assert response.get_json() == {
         "error" : f"Quiz '{testQuizName}' not found"
     }
+
+def test_delete_user(client):
+    #Create the user
+    testUsername = "ryan123"
+    response = client.post("/create-user", json={"username" : testUsername})
+    assert response.status_code == 201
+    assert response.get_json() == {"message" : f"User '{testUsername}' created successfully"}
+
+    #Test if exists
+    response = client.get(f"/get-user/{testUsername}")
+    assert response.status_code == 200
+    assert response.get_json() == [{
+        "quizzes" : [],
+        "username": testUsername
+    }]
+
+    #Delete the user
+    response = client.delete("/delete-user", json={"username" : testUsername})
+    assert response.status_code == 200
+    assert response.get_json() == {"message" : f"User '{testUsername}' deleted successfully"}
+    
+    #Test deleted user
+    response = client.get("/get-user/fakeUser123")
+    assert response.status_code == 200
+    assert response.get_json() == []

@@ -52,6 +52,20 @@ def create_user():
         return jsonify({"error": str(e)}), 500
     return jsonify({"message": f"User '{username}' created successfully"}), 201
 
+@app.route("/delete-user", methods=["DELETE"])
+def delete_user():
+    data = request.get_json()
+    username = data["username"]
+
+    try:
+        value = user_collection.delete_one({"username": username})
+
+        if value.deleted_count > 0:
+            return jsonify({"message": f"User '{username}' deleted successfully"}), 200
+        else:
+            return f"User '{username}' not found", 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 #Create a new quiz and attach it to a user
 #Expects JSON object with quizName and owner
@@ -126,15 +140,16 @@ def delete_question():
     questionID = ObjectId(data["questionID"]) #Need to convert the ID to objectID type to match
 
     
+    try:
+        value = quiz_collection.update_one({"quizName": quizName}, {"$pull": {"questions" : {"_id": questionID}}})
+        
 
-    value = quiz_collection.update_one({"quizName": quizName}, {"$pull": {"questions" : {"_id": questionID}}})
-    
-
-    if value.modified_count > 0:
-        return jsonify({"message": f"Question '{data["questionID"]}' in quiz '{quizName}' deleted successfully"}), 200
-    else:
-        return f"Question '{data["questionID"]}' not found", 404
-
+        if value.modified_count > 0:
+            return jsonify({"message": f"Question '{data["questionID"]}' in quiz '{quizName}' deleted successfully"}), 200
+        else:
+            return f"Question '{data["questionID"]}' not found", 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 #Deletes a quiz by name
 #Expects a JSON object with quizName
 @app.route("/delete-quiz", methods = ["DELETE"])

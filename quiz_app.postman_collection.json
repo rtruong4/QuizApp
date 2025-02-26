@@ -152,251 +152,279 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "New Request",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
 				}
 			]
 		},
 		{
-			"name": "Create user",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"username\" : \"ryan12345\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Local tests",
+			"item": [
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"ryan12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/create-user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"create-user"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://127.0.0.1:5000/create-user",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "5000",
-					"path": [
-						"create-user"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get user",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:5000/get-user/ryan12345",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "5000",
-					"path": [
-						"get-user",
-						"ryan12345"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "get quiz",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:5000/get-quiz/my fourth quiz",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "5000",
-					"path": [
-						"get-quiz",
-						"my fourth quiz"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create quiz",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"quizName\": \"my fourth quiz\",\r\n    \"owner\": \"john123\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "get user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/get-user/ryan12345",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"get-user",
+								"ryan12345"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://127.0.0.1:5000/create-quiz",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "5000",
-					"path": [
-						"create-quiz"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "create question",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{  \r\n    \"quizName\": \"my second quiz\",\r\n    \"question\": \"What color is the sun?\",\r\n    \"choices\": [\"Blue\", \"Red\", \"Yellow\", \"Green\"],\r\n    \"answer\": \"Yellow\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "get quiz",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/get-quiz/my fourth quiz",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"get-quiz",
+								"my fourth quiz"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://127.0.0.1:5000/create-question",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "5000",
-					"path": [
-						"create-question"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete question",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"quizName\": \"my second quiz\",\r\n    \"questionID\": \"67bc3984b7166dc65f306b05\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Create quiz",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quizName\": \"my fourth quiz\",\r\n    \"owner\": \"john123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/create-quiz",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"create-quiz"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://127.0.0.1:5000/delete-question",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "5000",
-					"path": [
-						"delete-question"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete quiz",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"quizName\": \"my fourth quiz\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "create question",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n    \"quizName\": \"my second quiz\",\r\n    \"question\": \"What color is the sun?\",\r\n    \"choices\": [\"Blue\", \"Red\", \"Yellow\", \"Green\"],\r\n    \"answer\": \"Yellow\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/create-question",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"create-question"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://127.0.0.1:5000/delete-quiz",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "5000",
-					"path": [
-						"delete-quiz"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Check answer",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{   \r\n    \"quizName\": \"my second quiz\",\r\n    \"questionID\": \"67bc37fb6bfea41723bac559\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Delete question",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quizName\": \"my second quiz\",\r\n    \"questionID\": \"67bc3984b7166dc65f306b05\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/delete-question",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"delete-question"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://127.0.0.1:5000/get-answer",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "5000",
-					"path": [
-						"get-answer"
-					]
+				{
+					"name": "Delete quiz",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quizName\": \"my fourth quiz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/delete-quiz",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"delete-quiz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check answer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"quizName\": \"my second quiz\",\r\n    \"questionID\": \"67bc37fb6bfea41723bac559\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/get-answer",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"get-answer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"ryan123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/delete-user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"delete-user"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
