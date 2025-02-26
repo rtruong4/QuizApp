@@ -114,7 +114,7 @@ def create_question():
         {"$push": {"questions": questionObject}}
     )
 
-    return jsonify({"message": f"Question '{data["question"]}' in quiz '{quizName}' created successfully" , "questionID" : str(questionID)}), 201
+    return jsonify({"message": f"Question '{data['question']}' in quiz '{quizName}' created successfully" , "questionID" : str(questionID)}), 201
 
 
 #Gets a quiz and all questions
