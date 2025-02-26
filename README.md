@@ -10,6 +10,12 @@
 - Go to root directory of project
 - docker compose up -d
 
+# Steps to run locally
+- Make sure you have python https://www.python.org/downloads/
+- Make sure you have pip installed https://pip.pypa.io/en/stable/installation/
+- pip install -r requirements.txt or pip3 install -r requirements.txt if you are on macOS or linux
+- python main.py or python3 main.py if you are on macOS or linux
+- Server will start on localhost:5000
 # Test cases available in test_app.py
 
 - python -m pytest test_app.py -v
