@@ -8,6 +8,8 @@ Steps to run on docker
 - Go to root directory of project
 - docker compose up -d
 
+Test cases available in test_app.py
+- python -m pytest test_app.py -v
 
-Endpoints to try(Currently no front end is implemented)
+Endpoints to try(Currently no front end is implemented). You may use postman to test
 - localhost:5000/create-user
