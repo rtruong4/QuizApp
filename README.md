@@ -14,7 +14,7 @@
 - Make sure you have docker installed https://www.docker.com/get-started/
 - Go to root directory of project
 - docker compose up -d
-- Server will start on localhost:5000
+- Server will start on localhost:5001
 
 # Steps to run locally
 
