@@ -13,4 +13,4 @@ Test cases available in test_app.py
 
 Endpoints to try(Currently no front end is implemented). You may use postman or any other api testing platform to test
 - localhost:5000/create-user
--- hello
+ - hello
