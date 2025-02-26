@@ -7,3 +7,7 @@ Steps to run on docker
 - Make sure you have docker installed https://www.docker.com/get-started/
 - Go to root directory of project
 - docker compose up -d
+
+
+Endpoints to try(Currently no front end is implemented)
+- localhost:5000/create-user
