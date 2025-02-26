@@ -31,7 +31,7 @@
 # Endpoints to try(Currently no front end is implemented). You may use postman or any other api testing platform to test
 
 A postman collection and environment json file is available to import
-https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-and-exporting-overview/
+https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-data/
 
 - localhost:5000/create-user
   - {"username" : "Any username you want"}
