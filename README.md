@@ -9,6 +9,7 @@
 - Make sure you have docker installed https://www.docker.com/get-started/
 - Go to root directory of project
 - docker compose up -d
+- Server will start on localhost:5000
 
 # Steps to run locally
 - Make sure you have python https://www.python.org/downloads/
