@@ -1,9 +1,9 @@
 # QuizApp
 
 Api for a small quiz app
--Docker image also available to pull at rtruong63/flask-quiz-app:latest
+- Docker image also available to pull at rtruong63/flask-quiz-app:latest
 
 Steps to run on docker
--Make sure you have docker installed https://www.docker.com/get-started/
--Go to root directory of project
--docker compose up -d
+- Make sure you have docker installed https://www.docker.com/get-started/
+- Go to root directory of project
+- docker compose up -d
