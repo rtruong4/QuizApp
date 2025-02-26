@@ -1,7 +1,7 @@
 # QuizApp
 
 # Api for a small quiz app
-
+- Currently supports creating users, creating quizzes with questions, deleting questions, deleting quizzes
 - Docker image also available to pull at rtruong63/flask-quiz-app:latest
 
 # Steps to run on docker
