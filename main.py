@@ -147,7 +147,7 @@ def delete_question():
         if value.modified_count > 0:
             return jsonify({"message": f"Question '{data['questionID']}' in quiz '{quizName}' deleted successfully"}), 200
         else:
-            return f"Question '{data["questionID"]}' not found", 404
+            return f"Question '{data['questionID']}' not found", 404
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 #Deletes a quiz by name
