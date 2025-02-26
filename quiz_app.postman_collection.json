@@ -15,7 +15,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://ec2-3-144-200-186.us-east-2.compute.amazonaws.com:5000/get-quiz/my second quiz",
+							"raw": "http://ec2-3-144-200-186.us-east-2.compute.amazonaws.com:{{port}}/get-quiz/my second quiz",
 							"protocol": "http",
 							"host": [
 								"ec2-3-144-200-186",
@@ -24,7 +24,7 @@
 								"amazonaws",
 								"com"
 							],
-							"port": "5000",
+							"port": "{{port}}",
 							"path": [
 								"get-quiz",
 								"my second quiz"
@@ -48,7 +48,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://ec2-3-144-200-186.us-east-2.compute.amazonaws.com:5000/create-quiz",
+							"raw": "http://ec2-3-144-200-186.us-east-2.compute.amazonaws.com:{{port}}/create-quiz",
 							"protocol": "http",
 							"host": [
 								"ec2-3-144-200-186",
@@ -57,7 +57,7 @@
 								"amazonaws",
 								"com"
 							],
-							"port": "5000",
+							"port": "{{port}}",
 							"path": [
 								"create-quiz"
 							]
@@ -80,7 +80,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://ec2-3-144-200-186.us-east-2.compute.amazonaws.com:5000/create-user",
+							"raw": "http://ec2-3-144-200-186.us-east-2.compute.amazonaws.com:{{port}}/create-user",
 							"protocol": "http",
 							"host": [
 								"ec2-3-144-200-186",
@@ -89,7 +89,7 @@
 								"amazonaws",
 								"com"
 							],
-							"port": "5000",
+							"port": "{{port}}",
 							"path": [
 								"create-user"
 							]
@@ -103,7 +103,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://ec2-3-144-200-186.us-east-2.compute.amazonaws.com:5000/get-user/john123",
+							"raw": "http://ec2-3-144-200-186.us-east-2.compute.amazonaws.com:{{port}}/get-user/john123",
 							"protocol": "http",
 							"host": [
 								"ec2-3-144-200-186",
@@ -112,7 +112,7 @@
 								"amazonaws",
 								"com"
 							],
-							"port": "5000",
+							"port": "{{port}}",
 							"path": [
 								"get-user",
 								"john123"
@@ -136,7 +136,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://ec2-3-144-200-186.us-east-2.compute.amazonaws.com:5000/create-question",
+							"raw": "http://ec2-3-144-200-186.us-east-2.compute.amazonaws.com:{{port}}/create-question",
 							"protocol": "http",
 							"host": [
 								"ec2-3-144-200-186",
@@ -145,7 +145,7 @@
 								"amazonaws",
 								"com"
 							],
-							"port": "5000",
+							"port": "{{port}}",
 							"path": [
 								"create-question"
 							]
@@ -165,7 +165,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\" : \"ryan12345\"\r\n}",
+							"raw": "{\r\n    \"username\" : \"ryan123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -173,15 +173,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/create-user",
+							"raw": "http://{{url}}:{{port}}/create-user",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
-							"port": "5000",
+							"port": "{{port}}",
 							"path": [
 								"create-user"
 							]
@@ -195,18 +192,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/get-user/ryan12345",
+							"raw": "http://{{url}}:{{port}}/get-user/ryan123",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
-							"port": "5000",
+							"port": "{{port}}",
 							"path": [
 								"get-user",
-								"ryan12345"
+								"ryan123"
 							]
 						}
 					},
@@ -218,15 +212,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/get-quiz/my fourth quiz",
+							"raw": "http://{{url}}:{{port}}/get-quiz/my fourth quiz",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
-							"port": "5000",
+							"port": "{{port}}",
 							"path": [
 								"get-quiz",
 								"my fourth quiz"
@@ -250,15 +241,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/create-quiz",
+							"raw": "http://{{url}}:{{port}}/create-quiz",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
-							"port": "5000",
+							"port": "{{port}}",
 							"path": [
 								"create-quiz"
 							]
@@ -281,15 +269,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/create-question",
+							"raw": "http://{{url}}:{{port}}/create-question",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
-							"port": "5000",
+							"port": "{{port}}",
 							"path": [
 								"create-question"
 							]
@@ -312,15 +297,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/delete-question",
+							"raw": "http://{{url}}:{{port}}/delete-question",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
-							"port": "5000",
+							"port": "{{port}}",
 							"path": [
 								"delete-question"
 							]
@@ -343,15 +325,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/delete-quiz",
+							"raw": "http://{{url}}:{{port}}/delete-quiz",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
-							"port": "5000",
+							"port": "{{port}}",
 							"path": [
 								"delete-quiz"
 							]
@@ -377,15 +356,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/get-answer",
+							"raw": "http://{{url}}:{{port}}/get-answer",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
-							"port": "5000",
+							"port": "{{port}}",
 							"path": [
 								"get-answer"
 							]
@@ -408,15 +384,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/delete-user",
+							"raw": "http://{{url}}:{{port}}/delete-user",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{url}}"
 							],
-							"port": "5000",
+							"port": "{{port}}",
 							"path": [
 								"delete-user"
 							]
