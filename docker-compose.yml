@@ -3,7 +3,7 @@ services:
     image: rtruong63/flask-quiz-app:latest
     build: .
     ports:
-      - "5000:5000"
+      - "5001:5000"
     environment:
       - FLASK_ENV=development
       - MONGO_URI=mongodb://mongo:27017/quiz_app
