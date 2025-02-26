@@ -14,7 +14,7 @@
 - Make sure you have docker installed https://www.docker.com/get-started/
 - Go to root directory of project
 - docker compose up -d
-- Server will start on localhost:5000
+- Server will start on localhost:5001
 
 # Steps to run locally
 
@@ -22,7 +22,7 @@
 - Make sure you have pip installed https://pip.pypa.io/en/stable/installation/
 - pip install -r requirements.txt or pip3 install -r requirements.txt if you are on macOS or linux
 - python main.py or python3 main.py if you are on macOS or linux
-- Server will start on localhost:5000
+- Server will start on localhost:5001
 
 # Test cases available in test_app.py
 
