@@ -23,6 +23,14 @@ Endpoints to try(Currently no front end is implemented). You may use postman or 
   - { "quizName": "Your quiz name", "owner": "Your username"}
 - localhost:5000/create-question
   - { "quizName": "Your quiz name", "question": "What color is the sun?", "choices": ["Blue", "Red", "Yellow", "Green"], "answer": "Yellow"}
+    - Save the question ID you get from the response. We will use it to find the question later
 - localhost:5000/create-question
   - { "quizName": "Your quiz name", "question": "What color is the sky?", "choices": ["Blue", "Red", "Yellow", "Green"], "answer": "Blue"}
+    - Save the question ID you get from the response. We will use it to find the question later
 - localhost:5000/get-quiz/"Your quiz name"
+- localhost:5000/delete-question
+  - {"quizName": "Your quiz name", "questionID": "Your question ID"}
+- localhost:5000/delete-quiz
+  - {"quizName": "Your quiz name"}
+- localhost:5000/check-answer
+  - {"quizName": "Your quiz name", "questionID": "Your question ID"}
