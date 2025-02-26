@@ -145,7 +145,7 @@ def delete_question():
         
 
         if value.modified_count > 0:
-            return jsonify({"message": f"Question '{data["questionID"]}' in quiz '{quizName}' deleted successfully"}), 200
+            return jsonify({"message": f"Question '{data['questionID']}' in quiz '{quizName}' deleted successfully"}), 200
         else:
             return f"Question '{data["questionID"]}' not found", 404
     except Exception as e:
@@ -186,7 +186,7 @@ def check_answer():
     question = quiz_collection.find_one({"quizName": quizName, "questions._id": questionID}, {"_id": 0, "questions.$": 1})
 
     if not question:
-        return f"Question '{data["questionID"]}' not found", 404
+        return f"Question '{data['questionID']}' not found", 404
     correctAnswer = question["questions"][0]["answer"]
 
     return jsonify({"answer" : correctAnswer})
