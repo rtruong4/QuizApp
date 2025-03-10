@@ -1,0 +1,18 @@
+.user-page {
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.quiz-link {
+  background-color: white;
+  font-size: large;
+}
+
+.quiz-info {
+  align-items: center;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
