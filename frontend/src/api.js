@@ -56,3 +56,35 @@ export const createQuiz = async (quizName, ownerName) => {
     return error;
   }
 };
+
+export const createQuestion = async (questionObject, quizName) => {
+  console.log(questionObject);
+  console.log(quizName);
+  const choices = [
+    questionObject.answer,
+    questionObject.choice2,
+    questionObject.choice3,
+    questionObject.choice4,
+  ];
+  const questionData = {
+    quizName: quizName,
+    question: questionObject.question,
+    choices: choices,
+    answer: questionObject.answer,
+  };
+  try {
+    const response = await axios.post(
+      `${API_URL}/create-question`,
+      questionData,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error", error);
+    return error;
+  }
+};

@@ -3,7 +3,7 @@ from flask_cors import CORS
 from pymongo import MongoClient
 from bson import ObjectId
 import os
-
+import random
 app = Flask(__name__)
 CORS(app)
 app.config["DEBUG"] = True
@@ -103,14 +103,16 @@ def create_question():
     if not list(quiz_collection.find({"quizName": quizName}, {"_id": 0})):
         return f"quiz '{quizName}' not found", 400
     
+    shuffleChoices = data["choices"]
+    random.shuffle(shuffleChoices)
     questionID = ObjectId()
     questionObject = {
         "question": data["question"],
-        "choices": data["choices"],
-        "answer": data["answer"],
+        "choices": shuffleChoices, #Shuffle so that the order is different
+        "answer": data["answer"], 
         "_id": questionID #Need to attach an ID so we can modify it later
     }
-
+    print(questionObject)
     quiz_collection.update_one(
         {"quizName": quizName},
         {"$push": {"questions": questionObject}}

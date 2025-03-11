@@ -31,9 +31,9 @@ const User = () => {
       const createNewQuiz = async () => {
         try {
           const response = await createQuiz(createQuizQuery, user);
-          // Refresh the page here
+          // Append to the quizzes array so it automatically shows up
+          setQuizzes((quizzes) => [...quizzes, createQuizQuery]);
           setCreateQuizQuery("");
-          loadUser();
         } catch {
           console.error("error");
         }
