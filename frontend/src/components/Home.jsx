@@ -6,6 +6,7 @@ const Home = () => {
   const [searchUserQuery, setSearchUserQuery] = useState("");
   const [searchQuizQuery, setSearchQuizQuery] = useState("");
   const [createUserQuery, setCreateUserQuery] = useState("");
+  const [takeQuizQuery, setTakeQuizQuery] = useState("");
   const navigate = useNavigate();
 
   const handleSearchUserChange = (e) => {
@@ -50,6 +51,17 @@ const Home = () => {
     }
   };
 
+  const handleTakeQuizChange = (e) => {
+    setTakeQuizQuery(e.target.value);
+  };
+
+  const handleTakeQuizSubmit = (e) => {
+    e.preventDefault();
+    if (setTakeQuizQuery) {
+      navigate(`/take_quiz/${takeQuizQuery}`);
+    }
+  };
+
   return (
     <div className="home-page">
       <h1>This is my home page</h1>
@@ -66,7 +78,7 @@ const Home = () => {
       </form>
 
       <form onSubmit={handleSearchUserSubmit}>
-        <h2>Search for a user</h2>
+        <h2>Search for a user and create quizzes</h2>
         <input
           type="text"
           placeholder="Search"
@@ -77,12 +89,23 @@ const Home = () => {
       </form>
 
       <form onSubmit={handleSearchQuizSubmit}>
-        <h2>Search for a quiz</h2>
+        <h2>Search for and edit a quiz</h2>
         <input
           type="text"
           placeholder="Search"
           value={searchQuizQuery}
           onChange={handleSearchQuizChange}
+        />
+        <button type="submit">GO!</button>
+      </form>
+
+      <form onSubmit={handleTakeQuizSubmit}>
+        <h2>Search for and take a quiz</h2>
+        <input
+          type="text"
+          placeholder="Search"
+          value={takeQuizQuery}
+          onChange={handleTakeQuizChange}
         />
         <button type="submit">GO!</button>
       </form>

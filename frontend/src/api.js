@@ -88,3 +88,58 @@ export const createQuestion = async (questionObject, quizName) => {
     return error;
   }
 };
+
+export const deleteUser = async (name) => {
+  const userObject = {
+    username: name,
+  };
+  try {
+    const response = await axios.delete(`${API_URL}/delete-user`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: userObject,
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error", error);
+    return error;
+  }
+};
+
+export const deleteQuiz = async (quizName) => {
+  const quizObject = {
+    quizName: quizName,
+  };
+  try {
+    const response = await axios.delete(`${API_URL}/delete-quiz`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: quizObject,
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error", error);
+    return error;
+  }
+};
+
+export const deleteQuestion = async (questionID, quizName) => {
+  const questionObject = {
+    quizName: quizName,
+    questionID: questionID,
+  };
+  try {
+    const response = await axios.delete(`${API_URL}/delete-question`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: questionObject,
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error", error);
+    return error;
+  }
+};
