@@ -1,4 +1,35 @@
 .home-page {
+  text-align: center;
+}
+
+.input-bar {
+  margin-right: 20px;
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid black;
+  outline: none;
+}
+.form-group {
+  text-align: center;
+  padding: 0;
+}
+
+.input-bar:focus {
+  border-color: purple;
+}
+
+form {
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: rgba(0, 255, 128, 0.5);
+}
+
+h2 {
+  margin: 5px;
+}
+
+.home-page-form {
   padding: 20px;
-  min-height: 100vh;
 }

@@ -3,5 +3,35 @@
 
 .take-quiz-page {
   width: 100%;
-  min-height: 100vh;
+}
+
+.question {
+  text-align: center;
+}
+
+.regular-btn {
+  margin: 5px;
+  width: 50%;
+}
+
+.highlighted-btn {
+  margin: 5px;
+  width: 50%;
+  background-color: green;
+}
+
+.greyed-btn {
+  margin: 5px;
+  width: 50%;
+  cursor: not-allowed;
+  background-color: grey;
+}
+
+.greyed-btn:hover {
+  background-color: grey;
+  border-color: black;
+}
+
+.bottom-btn {
+  margin-top: 15px;
 }

@@ -2,3 +2,31 @@
   padding: 20px;
   min-height: 100vh;
 }
+
+.created-by {
+  padding-bottom: 20px;
+}
+
+.create-question-form {
+  display: flex;
+  height: 100%;
+}
+
+.create-question-btn {
+  margin-left: 20px;
+}
+
+textarea {
+  resize: none;
+  height: 75px;
+  width: 200px;
+}
+
+.delete-question-btn:hover {
+  background-color: red;
+}
+
+.delete-quiz-btn {
+  margin-top: 25px;
+  background-color: red;
+}

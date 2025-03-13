@@ -66,19 +66,24 @@ const User = () => {
   if (userExists === false) {
     return (
       <div className="user-page">
-        <Link to="/">Back to Home</Link>
+        <Link to="/" className="home-link">
+          Back to Home
+        </Link>
         <h1>User {user} does not exist</h1>
       </div>
     );
   }
   return (
     <div className="user-page">
-      <Link to="/">Back to Home</Link>
+      <Link to="/" className="home-link">
+        Back to Home
+      </Link>
       <h1>{user}</h1>
 
       <form onSubmit={handleCreateQuizSubmit}>
         <h2>Create a quiz</h2>
         <input
+          className="input-bar"
           type="text"
           placeholder="Quiz name"
           value={createQuizQuery}

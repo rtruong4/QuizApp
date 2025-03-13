@@ -5,12 +5,15 @@
 
 .quiz-link {
   background-color: white;
+  padding: 10px;
   font-size: large;
+  display: flex;
 }
 
 .quiz-info {
   align-items: center;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 ul {

@@ -64,51 +64,54 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      <h1>This is my home page</h1>
+      <h1 className="home-title">Quiz app</h1>
+      <div className="form-group">
+        <form onSubmit={handleCreateUserSubmit} className="home-page-form">
+          <h2>Create a user</h2>
+          <input
+            className="input-bar"
+            type="text"
+            placeholder="Username"
+            value={createUserQuery}
+            onChange={handleCreateUserChange}
+          />
+          <button type="submit">Create</button>
+        </form>
+        <form onSubmit={handleSearchUserSubmit} className="home-page-form">
+          <h2>Search for a user and create quizzes</h2>
+          <input
+            className="input-bar"
+            type="text"
+            placeholder="Search"
+            value={searchUserQuery}
+            onChange={handleSearchUserChange}
+          />
+          <button type="submit">Search</button>
+        </form>
+        <form onSubmit={handleSearchQuizSubmit} className="home-page-form">
+          <h2>Search for and edit a quiz</h2>
+          <input
+            className="input-bar"
+            type="text"
+            placeholder="Search"
+            value={searchQuizQuery}
+            onChange={handleSearchQuizChange}
+          />
+          <button type="submit">Search</button>
+        </form>
 
-      <form onSubmit={handleCreateUserSubmit}>
-        <h2>Create a user</h2>
-        <input
-          type="text"
-          placeholder="Username"
-          value={createUserQuery}
-          onChange={handleCreateUserChange}
-        />
-        <button type="submit">CREATE!</button>
-      </form>
-
-      <form onSubmit={handleSearchUserSubmit}>
-        <h2>Search for a user and create quizzes</h2>
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchUserQuery}
-          onChange={handleSearchUserChange}
-        />
-        <button type="submit">GO!</button>
-      </form>
-
-      <form onSubmit={handleSearchQuizSubmit}>
-        <h2>Search for and edit a quiz</h2>
-        <input
-          type="text"
-          placeholder="Search"
-          value={searchQuizQuery}
-          onChange={handleSearchQuizChange}
-        />
-        <button type="submit">GO!</button>
-      </form>
-
-      <form onSubmit={handleTakeQuizSubmit}>
-        <h2>Search for and take a quiz</h2>
-        <input
-          type="text"
-          placeholder="Search"
-          value={takeQuizQuery}
-          onChange={handleTakeQuizChange}
-        />
-        <button type="submit">GO!</button>
-      </form>
+        <form onSubmit={handleTakeQuizSubmit} className="home-page-form">
+          <h2>Search for and take a quiz</h2>
+          <input
+            className="input-bar"
+            type="text"
+            placeholder="Search"
+            value={takeQuizQuery}
+            onChange={handleTakeQuizChange}
+          />
+          <button type="submit">Search</button>
+        </form>
+      </div>
     </div>
   );
 };

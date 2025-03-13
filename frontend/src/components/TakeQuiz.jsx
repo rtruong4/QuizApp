@@ -14,6 +14,7 @@ const TakeQuiz = () => {
   const [answerCheck, setAnswerCheck] = useState("");
   const [answerSubmitted, setAnswerSubmitted] = useState(false);
   const [quizExists, setQuizExists] = useState(false);
+  const [buttonHighlighted, setButtonHighlighted] = useState(null);
   const navigate = useNavigate();
   useEffect(() => {
     const loadQuiz = async () => {
@@ -33,7 +34,8 @@ const TakeQuiz = () => {
     loadQuiz();
   }, [quizName]);
 
-  const handleSelectAnswer = (answer) => {
+  const handleSelectAnswer = (answer, index) => {
+    setButtonHighlighted(index);
     setSelectedAnswer(answer);
   };
 
@@ -41,7 +43,7 @@ const TakeQuiz = () => {
     if (!selectedAnswer) {
       return;
     }
-
+    setButtonHighlighted(null);
     setAnswerList((prevAnswers) => ({
       ...prevAnswers,
       [questions[currentQuestionIndex]._id]: selectedAnswer,
@@ -56,6 +58,7 @@ const TakeQuiz = () => {
   };
 
   const handleNext = () => {
+    setButtonHighlighted(null);
     setAnswerSubmitted(false);
     setSelectedAnswer(null);
     setAnswerCheck("");
@@ -73,7 +76,9 @@ const TakeQuiz = () => {
   if (quizExists === false) {
     return (
       <div className="quiz-page">
-        <Link to="/">Back to Home</Link>
+        <Link to="/" className="home-link">
+          Back to Home
+        </Link>
         <h1>Quiz {quiz} does not exist</h1>
       </div>
     );
@@ -81,7 +86,9 @@ const TakeQuiz = () => {
   if (questions.length === 0) {
     return (
       <div className="quiz-page">
-        <Link to="/">Back to Home</Link>
+        <Link to="/" className="home-link">
+          Back to Home
+        </Link>
         <h1>Quiz {quiz} does not have any questions yet</h1>
       </div>
     );
@@ -92,39 +99,53 @@ const TakeQuiz = () => {
 
   return (
     <div className="take-quiz-page">
-      <Link to="/">Back to Home</Link>
-      <h2>
-        Question {currentQuestionIndex + 1}: {currentQuestion.question}
-      </h2>
-      <div className="questions-list">
-        {currentQuestion.choices.map((choice) => (
-          <div>
-            <button
-              key={choice}
-              className={`${
-                selectedAnswer === choice
-                  ? "bg-blue-500 text-white"
-                  : "bg-grat-200"
-              }`}
-              onClick={() => handleSelectAnswer(choice)}
-            >
-              {choice}
-            </button>
-            <br></br>
-          </div>
-        ))}
+      <Link to="/" className="home-link">
+        Back to Home
+      </Link>
+      <div className="question">
+        <h2>
+          Question {currentQuestionIndex + 1}: {currentQuestion.question}
+        </h2>
+        <div className="questions-list">
+          {currentQuestion.choices.map((choice, index) => (
+            <div>
+              <button
+                key={index}
+                className={
+                  !answerSubmitted
+                    ? buttonHighlighted === index
+                      ? "highlighted-btn"
+                      : "regular-btn"
+                    : "greyed-btn"
+                }
+                onClick={() => handleSelectAnswer(choice, index)}
+              >
+                {choice}
+              </button>
+              <br></br>
+            </div>
+          ))}
+        </div>
+        {answerCheck && <p>{answerCheck}</p>}
+
+        {!answerSubmitted && (
+          <button className="bottom-btn" onClick={handleSubmit}>
+            Submit
+          </button>
+        )}
+
+        {answerSubmitted && currentQuestionIndex < questions.length - 1 && (
+          <button className="bottom-btn" onClick={handleNext}>
+            Next
+          </button>
+        )}
+
+        {answerSubmitted && currentQuestionIndex === questions.length - 1 && (
+          <button className="bottom-btn" onClick={handleFinish}>
+            Finish
+          </button>
+        )}
       </div>
-      {answerCheck && <p>{answerCheck}</p>}
-
-      {!answerSubmitted && <button onClick={handleSubmit}>Submit</button>}
-
-      {answerSubmitted && currentQuestionIndex < questions.length - 1 && (
-        <button onClick={handleNext}>Next</button>
-      )}
-
-      {answerSubmitted && currentQuestionIndex === questions.length - 1 && (
-        <button onClick={handleFinish}>Finish</button>
-      )}
     </div>
   );
 };
