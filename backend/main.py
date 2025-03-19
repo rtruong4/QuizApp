@@ -6,7 +6,7 @@ import os
 import random
 app = Flask(__name__)
 CORS(app)
-app.config["DEBUG"] = True
+
 
 #Default to local mongoDB, but docker can override
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
@@ -196,4 +196,4 @@ def check_answer():
     return jsonify({"answer" : correctAnswer})
 
 if __name__ == "__main__":
-    app.run(host ='0.0.0.0', port = 5000, debug=True)
+    app.run(host ='0.0.0.0', port = 5000)

@@ -1,35 +1,38 @@
 services:
-  flask-app:
+  backend:
     # image: rtruong63/flask-quiz-app:latest
     build: ./backend
     ports:
-      - "5001:5000"
+      - "5000:5000"
     environment:
-      - FLASK_ENV=development
       - MONGO_URI=mongodb://mongo:27017/quiz_app
     depends_on:
       - mongo
+    networks:
+      - app_network
+    restart: always
 
   frontend:
     build: ./frontend
     ports:
       - "3000:3000"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-    environment:
-      - CHOKIDAR_USEPOLLING=true
-      - REACT_APP_API_URL=http://flask-app:5000
     depends_on:
-      - flask-app
-    command: ["npm", "run", "dev"]
+      - backend
+    networks:
+      - app_network
+    restart: always
 
   mongo:
     image: mongo:latest
-    volumes:
-      - mongo_data:/data/db
     ports:
       - "27017:27017"
+    networks:
+      - app_network
+    restart: always
+
+networks:
+  app_network:
+    driver: bridge
 
 volumes:
   mongo_data:
