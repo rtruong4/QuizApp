@@ -1,7 +1,8 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000";
-
+const API_URL = "http://ec2-54-215-32-141.us-west-1.compute.amazonaws.com:5000";
+// Use for local development
+// const API_URL = "http://localhost:5000"
 export const getUser = async (name) => {
   try {
     const response = await axios.get(`${API_URL}/get-user/${name}`);
