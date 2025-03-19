@@ -1,7 +1,6 @@
 services:
   backend:
-    # image: rtruong63/flask-quiz-app:latest
-    build: ./backend
+    image: rtruong63/backend_quiz_app:latest
     ports:
       - "5000:5000"
     environment:
@@ -13,7 +12,7 @@ services:
     restart: always
 
   frontend:
-    build: ./frontend
+    image: rtruong63/frontend_quiz_app:latest
     ports:
       - "3000:3000"
     depends_on:
