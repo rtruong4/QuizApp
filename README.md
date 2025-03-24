@@ -2,29 +2,27 @@
 
 # Api for a small quiz app
 
-- Currently supports creating users, creating quizzes with questions, deleting questions, deleting quizzes
-- Docker image also available to pull at rtruong63/flask-quiz-app:latest
+- Currently supports creating users, creating quizzes with questions, deleting questions, deleting quizzes, and deleting users
+- Users can be created, which have quizzes associated with them
+- Questions can be added to these quizzes
 
 # Please install mongoDB community server
 
 - https://www.mongodb.com/docs/manual/administration/install-community/
 
-# Steps to run on docker
-
-- Make sure you have docker installed https://www.docker.com/get-started/
-- Go to root directory of project
-- docker compose up -d
-- Server will start on localhost:5001
-
 # Steps to run locally
 
 - Make sure you have python https://www.python.org/downloads/
 - Make sure you have pip installed https://pip.pypa.io/en/stable/installation/
+- cd into the backend directory
 - pip install -r requirements.txt or pip3 install -r requirements.txt if you are on macOS or linux
-- python main.py or python3 main.py if you are on macOS or linux
-- Server will start on localhost:5001
+- cd into the frontend directory
+- run npm install
+- cd back to the root directory
+- "run npm dev", this should run the backend and frontend concurrently
+- Server will start on localhost:5000 and frontend app will start on localhost:3000
 
-# Test cases available in test_app.py
+# Test cases available in test_app.py in the backend directory
 
 - python -m pytest test_app.py -v
 
